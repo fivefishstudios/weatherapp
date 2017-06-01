@@ -53,6 +53,21 @@ html, body {
   margin-left: 50px;
 }
 
+#help{
+  position: fixed;
+  font-family: sans-serif;
+  color: #C00;
+  bottom: 30px;
+  padding: 5px;
+  background-color: rgba(255,255,0,0.2);
+  font-size: 0.8em;
+}
+
+#help a {
+  color: #C00;
+}
+
+
 @media (min-width: 300px) {
   #forecast{
     width: 90%;

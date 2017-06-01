@@ -28,6 +28,8 @@
       </div>
     </div>
     
+    <div id="help">NOTE: This app needs to be accessed using secure <a href="https://weather-owel.surge.sh">https://weather-owel.surge.sh</a></div>
+    
     <!-- google maps -->
     <script 
       async 
@@ -81,9 +83,11 @@
             
             
             // now that we know user's location, get the weather info by calling weather api
+            // use https://crossorigin.me/some-http-url to allow http access from https origin
+            // alternative: https://cors-anywhere.herokuapp.com/
             $.ajax({
               method: "GET",
-              url: "http://api.openweathermap.org/data/2.5/weather",
+              url: "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather",
               // API key is required, assign to appid
               data: { lat: myLat, lon: myLng, appid: '0ba5350ff17a90b6f0b3bb63cf06f3a9' }
             })
