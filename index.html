@@ -28,7 +28,7 @@
       </div>
     </div>
     
-    <div id="help">NOTE: This app needs to be accessed using secure <a href="https://weather-owel.surge.sh">https://weather-owel.surge.sh</a></div>
+    <div id="help">NOTE: This app needs to be accessed using secure <a href="https://weather-owel.surge.sh">https://weather-ruel.surge.sh</a></div>
     
     <!-- google maps -->
     <script 
@@ -112,9 +112,10 @@
               $('#desc').text('Forecast is ' + weather.weather[0].main + ', ' + weather.weather[0].description);
               
               // icon
-              var iconImage = parseInt(weather.weather[0].id) + parseInt(weather.weather[0].icon);
+              var subIcon = weather.weather[0].icon;
+              var iconImage = parseInt(weather.weather[0].id) + parseInt(subIcon);
               // determine if day or night....
-              iconImage = 'owf-' + iconImage + "-n"
+              iconImage = 'owf-' + iconImage + "-" + subIcon[subIcon.length - 1];
               $('#weathericon').html('<i class="owf owf-5x  ' + iconImage + '"></i>');
 
               
