@@ -2,7 +2,7 @@
 // use Google Maps API to get Lat/Long via HTML5 geolocation
 var map, infoWindow, myLat, myLng;
 
-function getWeater(myLat, myLng){
+function getWeather(myLat, myLng){
   $.ajax({
         method: "GET",
         url: "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather",
@@ -59,7 +59,7 @@ function initMap() {
       myLat = pos.lat;
       myLng = pos.lng;
     
-      getWeater(myLat, myLng);
+      getWeather(myLat, myLng);
   })
   
   // Try HTML5 geolocation.
@@ -79,7 +79,7 @@ function initMap() {
       // now that we know user's location, get the weather info by calling weather api
       // use https://crossorigin.me/some-http-url to allow http access from https origin
       // alternative: https://cors-anywhere.herokuapp.com/      
-      getWeater(myLat, myLng);
+      getWeather(myLat, myLng);
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
     });
